@@ -19,14 +19,14 @@ var _ MappedNullable = &StandardError{}
 
 // StandardError struct for StandardError
 type StandardError struct {
-	Status      string                 `json:"status"`
-	Id          *string                `json:"id,omitempty"`
-	Category    string                 `json:"category"`
+	Status string `json:"status"`
+	Id *string `json:"id,omitempty"`
+	Category string `json:"category"`
 	SubCategory map[string]interface{} `json:"subCategory,omitempty"`
-	Message     string                 `json:"message"`
-	Errors      []ErrorDetail          `json:"errors"`
-	Context     map[string][]string    `json:"context"`
-	Links       map[string]string      `json:"links"`
+	Message string `json:"message"`
+	Errors []ErrorDetail `json:"errors"`
+	Context map[string][]string `json:"context"`
+	Links map[string]string `json:"links"`
 }
 
 // NewStandardError instantiates a new StandardError object
@@ -261,7 +261,7 @@ func (o *StandardError) SetLinks(v map[string]string) {
 }
 
 func (o StandardError) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,3 +320,5 @@ func (v *NullableStandardError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

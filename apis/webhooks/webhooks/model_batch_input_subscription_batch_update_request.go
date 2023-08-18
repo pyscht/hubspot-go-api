@@ -65,7 +65,7 @@ func (o *BatchInputSubscriptionBatchUpdateRequest) SetInputs(v []SubscriptionBat
 }
 
 func (o BatchInputSubscriptionBatchUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,3 +113,5 @@ func (v *NullableBatchInputSubscriptionBatchUpdateRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

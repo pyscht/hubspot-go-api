@@ -19,8 +19,8 @@ var _ MappedNullable = &SubscriptionBatchUpdateRequest{}
 
 // SubscriptionBatchUpdateRequest struct for SubscriptionBatchUpdateRequest
 type SubscriptionBatchUpdateRequest struct {
-	Id     int32 `json:"id"`
-	Active bool  `json:"active"`
+	Id int32 `json:"id"`
+	Active bool `json:"active"`
 }
 
 // NewSubscriptionBatchUpdateRequest instantiates a new SubscriptionBatchUpdateRequest object
@@ -91,7 +91,7 @@ func (o *SubscriptionBatchUpdateRequest) SetActive(v bool) {
 }
 
 func (o SubscriptionBatchUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,3 +140,5 @@ func (v *NullableSubscriptionBatchUpdateRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

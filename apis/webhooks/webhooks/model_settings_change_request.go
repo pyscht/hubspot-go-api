@@ -20,7 +20,7 @@ var _ MappedNullable = &SettingsChangeRequest{}
 // SettingsChangeRequest New or updated webhook settings for an app.
 type SettingsChangeRequest struct {
 	// A publicly available URL for Hubspot to call where event payloads will be delivered. See [link-so-some-doc](#) for details about the format of these event payloads.
-	TargetUrl  string             `json:"targetUrl"`
+	TargetUrl string `json:"targetUrl"`
 	Throttling ThrottlingSettings `json:"throttling"`
 }
 
@@ -92,7 +92,7 @@ func (o *SettingsChangeRequest) SetThrottling(v ThrottlingSettings) {
 }
 
 func (o SettingsChangeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,3 +141,5 @@ func (v *NullableSettingsChangeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

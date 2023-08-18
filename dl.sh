@@ -83,9 +83,9 @@ jq -c -r '.results[] ' "$TEMP_JSON" | while IFS=$'\t' read -r api; do
   name=$(echo "$api" | jq -r ".name")
 
   echo "$api" | jq -c -r '.features | to_entries[] | "\(.key)\t\(.value.openAPI)"' | while IFS=$'\t' read -r feature url; do
-    module=$(echo "$name" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')
-    package=$(echo "$feature" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')
-    api_path="$module/$package"
+    module=$(echo "$name" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+    package=$(echo "$feature" | tr ' ' '_' | tr '-' '_' | tr '[:upper:]' '[:lower:]')
+    api_path="${module}/${package}"
     echo "api: $api_path"
     echo "url: $url"
     mkdir -p "apis/$api_path"

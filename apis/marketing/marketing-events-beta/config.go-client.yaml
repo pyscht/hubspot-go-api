@@ -1,8 +1,0 @@
-outputAsLibrary: true
-sourceFolder: openapi
-isGoSubmodule: true
- false
-modelTests: false
-gitUserId: pyscht
-gitRepoId: hubspot-go-api/apis/marketing
-packageName: marketing-events-beta

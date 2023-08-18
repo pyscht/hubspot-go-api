@@ -19,14 +19,15 @@ import (
 	"strings"
 )
 
+
 // SubscriptionsApiService SubscriptionsApi service
 type SubscriptionsApiService service
 
 type ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest struct {
-	ctx            context.Context
-	ApiService     *SubscriptionsApiService
+	ctx context.Context
+	ApiService *SubscriptionsApiService
 	subscriptionId int32
-	appId          int32
+	appId int32
 }
 
 func (r ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest) Execute() (*http.Response, error) {
@@ -36,26 +37,26 @@ func (r ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest) Execu
 /*
 DeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchive Method for DeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchive
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param subscriptionId
-	@param appId
-	@return ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param subscriptionId
+ @param appId
+ @return ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest
 */
 func (a *SubscriptionsApiService) DeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchive(ctx context.Context, subscriptionId int32, appId int32) ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest {
 	return ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest{
-		ApiService:     a,
-		ctx:            ctx,
+		ApiService: a,
+		ctx: ctx,
 		subscriptionId: subscriptionId,
-		appId:          appId,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
 func (a *SubscriptionsApiService) DeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveExecute(r ApiDeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchiveRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsApiService.DeleteWebhooksV3AppIdSubscriptionsSubscriptionIdArchive")
@@ -124,14 +125,14 @@ func (a *SubscriptionsApiService) DeleteWebhooksV3AppIdSubscriptionsSubscription
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -139,9 +140,9 @@ func (a *SubscriptionsApiService) DeleteWebhooksV3AppIdSubscriptionsSubscription
 }
 
 type ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SubscriptionsApiService
-	appId      int32
+	appId int32
 }
 
 func (r ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest) Execute() (*SubscriptionListResponse, *http.Response, error) {
@@ -151,27 +152,26 @@ func (r ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest) Execute() (*Subscriptio
 /*
 GetWebhooksV3AppIdSubscriptionsGetAll Method for GetWebhooksV3AppIdSubscriptionsGetAll
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param appId
-	@return ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param appId
+ @return ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest
 */
 func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsGetAll(ctx context.Context, appId int32) ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest {
 	return ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest{
 		ApiService: a,
-		ctx:        ctx,
-		appId:      appId,
+		ctx: ctx,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return SubscriptionListResponse
+//  @return SubscriptionListResponse
 func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsGetAllExecute(r ApiGetWebhooksV3AppIdSubscriptionsGetAllRequest) (*SubscriptionListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *SubscriptionListResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SubscriptionListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsApiService.GetWebhooksV3AppIdSubscriptionsGetAll")
@@ -239,14 +239,14 @@ func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsGetAllExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -263,10 +263,10 @@ func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsGetAllExecute(r
 }
 
 type ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest struct {
-	ctx            context.Context
-	ApiService     *SubscriptionsApiService
+	ctx context.Context
+	ApiService *SubscriptionsApiService
 	subscriptionId int32
-	appId          int32
+	appId int32
 }
 
 func (r ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest) Execute() (*SubscriptionResponse, *http.Response, error) {
@@ -276,29 +276,28 @@ func (r ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest) Execute(
 /*
 GetWebhooksV3AppIdSubscriptionsSubscriptionIdGetById Method for GetWebhooksV3AppIdSubscriptionsSubscriptionIdGetById
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param subscriptionId
-	@param appId
-	@return ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param subscriptionId
+ @param appId
+ @return ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest
 */
 func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsSubscriptionIdGetById(ctx context.Context, subscriptionId int32, appId int32) ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest {
 	return ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest{
-		ApiService:     a,
-		ctx:            ctx,
+		ApiService: a,
+		ctx: ctx,
 		subscriptionId: subscriptionId,
-		appId:          appId,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return SubscriptionResponse
+//  @return SubscriptionResponse
 func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdExecute(r ApiGetWebhooksV3AppIdSubscriptionsSubscriptionIdGetByIdRequest) (*SubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *SubscriptionResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsApiService.GetWebhooksV3AppIdSubscriptionsSubscriptionIdGetById")
@@ -367,14 +366,14 @@ func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsSubscriptionIdG
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -391,10 +390,10 @@ func (a *SubscriptionsApiService) GetWebhooksV3AppIdSubscriptionsSubscriptionIdG
 }
 
 type ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest struct {
-	ctx                      context.Context
-	ApiService               *SubscriptionsApiService
-	subscriptionId           int32
-	appId                    int32
+	ctx context.Context
+	ApiService *SubscriptionsApiService
+	subscriptionId int32
+	appId int32
 	subscriptionPatchRequest *SubscriptionPatchRequest
 }
 
@@ -410,29 +409,28 @@ func (r ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest) Execute
 /*
 PatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdate Method for PatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdate
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param subscriptionId
-	@param appId
-	@return ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param subscriptionId
+ @param appId
+ @return ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest
 */
 func (a *SubscriptionsApiService) PatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdate(ctx context.Context, subscriptionId int32, appId int32) ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest {
 	return ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest{
-		ApiService:     a,
-		ctx:            ctx,
+		ApiService: a,
+		ctx: ctx,
 		subscriptionId: subscriptionId,
-		appId:          appId,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return SubscriptionResponse
+//  @return SubscriptionResponse
 func (a *SubscriptionsApiService) PatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateExecute(r ApiPatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdateRequest) (*SubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *SubscriptionResponse
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsApiService.PatchWebhooksV3AppIdSubscriptionsSubscriptionIdUpdate")
@@ -506,14 +504,14 @@ func (a *SubscriptionsApiService) PatchWebhooksV3AppIdSubscriptionsSubscriptionI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -530,9 +528,9 @@ func (a *SubscriptionsApiService) PatchWebhooksV3AppIdSubscriptionsSubscriptionI
 }
 
 type ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest struct {
-	ctx                                      context.Context
-	ApiService                               *SubscriptionsApiService
-	appId                                    int32
+	ctx context.Context
+	ApiService *SubscriptionsApiService
+	appId int32
 	batchInputSubscriptionBatchUpdateRequest *BatchInputSubscriptionBatchUpdateRequest
 }
 
@@ -548,27 +546,26 @@ func (r ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest) Execut
 /*
 PostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatch Method for PostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatch
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param appId
-	@return ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param appId
+ @return ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest
 */
 func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatch(ctx context.Context, appId int32) ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest {
 	return ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest{
 		ApiService: a,
-		ctx:        ctx,
-		appId:      appId,
+		ctx: ctx,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return BatchResponseSubscriptionResponse
+//  @return BatchResponseSubscriptionResponse
 func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchExecute(r ApiPostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatchRequest) (*BatchResponseSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *BatchResponseSubscriptionResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *BatchResponseSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsApiService.PostWebhooksV3AppIdSubscriptionsBatchUpdateUpdateBatch")
@@ -641,14 +638,14 @@ func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsBatchUpdateUpd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -665,9 +662,9 @@ func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsBatchUpdateUpd
 }
 
 type ApiPostWebhooksV3AppIdSubscriptionsCreateRequest struct {
-	ctx                       context.Context
-	ApiService                *SubscriptionsApiService
-	appId                     int32
+	ctx context.Context
+	ApiService *SubscriptionsApiService
+	appId int32
 	subscriptionCreateRequest *SubscriptionCreateRequest
 }
 
@@ -683,27 +680,26 @@ func (r ApiPostWebhooksV3AppIdSubscriptionsCreateRequest) Execute() (*Subscripti
 /*
 PostWebhooksV3AppIdSubscriptionsCreate Method for PostWebhooksV3AppIdSubscriptionsCreate
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param appId
-	@return ApiPostWebhooksV3AppIdSubscriptionsCreateRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param appId
+ @return ApiPostWebhooksV3AppIdSubscriptionsCreateRequest
 */
 func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsCreate(ctx context.Context, appId int32) ApiPostWebhooksV3AppIdSubscriptionsCreateRequest {
 	return ApiPostWebhooksV3AppIdSubscriptionsCreateRequest{
 		ApiService: a,
-		ctx:        ctx,
-		appId:      appId,
+		ctx: ctx,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return SubscriptionResponse
+//  @return SubscriptionResponse
 func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsCreateExecute(r ApiPostWebhooksV3AppIdSubscriptionsCreateRequest) (*SubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *SubscriptionResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsApiService.PostWebhooksV3AppIdSubscriptionsCreate")
@@ -776,14 +772,14 @@ func (a *SubscriptionsApiService) PostWebhooksV3AppIdSubscriptionsCreateExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

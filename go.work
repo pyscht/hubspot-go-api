@@ -5,17 +5,17 @@ use (
 	./apis/auth/oauth
 	./apis/automation/actions
 	./apis/business-units/business_units
-	./apis/cms/audit-logs
+	./apis/cms/audit_logs
 	./apis/cms/authors
-	./apis/cms/blog-posts
+	./apis/cms/blog_posts
 	./apis/cms/domains
 	./apis/cms/hubdb
 	./apis/cms/performance
-	./apis/cms/site-search
+	./apis/cms/site_search
 	./apis/cms/source_code
 	./apis/cms/tags
-	./apis/cms/url-redirects
-	./apis/communication-preferences/communications-status
+	./apis/cms/url_redirects
+	./apis/communication-preferences/communications_status
 	./apis/conversations/visitor_identification
 	./apis/crm/accounting
 	./apis/crm/associations
@@ -39,7 +39,7 @@ use (
 	./apis/crm/timeline
 	./apis/crm/videoconferencing
 	./apis/events/events
-	./apis/marketing/marketing-events-beta
+	./apis/marketing/marketing_events_beta
 	./apis/marketing/transactional
 	./apis/webhooks/webhooks
 )

@@ -1,0 +1,6 @@
+outputAsLibrary: true
+sourceFolder: openapi
+isGoSubmodule: true
+gitUserId: pyscht
+gitRepoId: hubspot-go-api/apis/cms
+packageName: blog_posts

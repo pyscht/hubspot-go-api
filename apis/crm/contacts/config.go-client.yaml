@@ -1,8 +1,6 @@
 outputAsLibrary: true
 sourceFolder: openapi
 isGoSubmodule: true
- false
-modelTests: false
 gitUserId: pyscht
 gitRepoId: hubspot-go-api/apis/crm
 packageName: contacts

@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // SettingsApiService SettingsApi service
 type SettingsApiService service
 
 type ApiDeleteWebhooksV3AppIdSettingsClearRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SettingsApiService
-	appId      int32
+	appId int32
 }
 
 func (r ApiDeleteWebhooksV3AppIdSettingsClearRequest) Execute() (*http.Response, error) {
@@ -35,24 +36,24 @@ func (r ApiDeleteWebhooksV3AppIdSettingsClearRequest) Execute() (*http.Response,
 /*
 DeleteWebhooksV3AppIdSettingsClear Method for DeleteWebhooksV3AppIdSettingsClear
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param appId
-	@return ApiDeleteWebhooksV3AppIdSettingsClearRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param appId
+ @return ApiDeleteWebhooksV3AppIdSettingsClearRequest
 */
 func (a *SettingsApiService) DeleteWebhooksV3AppIdSettingsClear(ctx context.Context, appId int32) ApiDeleteWebhooksV3AppIdSettingsClearRequest {
 	return ApiDeleteWebhooksV3AppIdSettingsClearRequest{
 		ApiService: a,
-		ctx:        ctx,
-		appId:      appId,
+		ctx: ctx,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
 func (a *SettingsApiService) DeleteWebhooksV3AppIdSettingsClearExecute(r ApiDeleteWebhooksV3AppIdSettingsClearRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.DeleteWebhooksV3AppIdSettingsClear")
@@ -120,14 +121,14 @@ func (a *SettingsApiService) DeleteWebhooksV3AppIdSettingsClearExecute(r ApiDele
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -135,9 +136,9 @@ func (a *SettingsApiService) DeleteWebhooksV3AppIdSettingsClearExecute(r ApiDele
 }
 
 type ApiGetWebhooksV3AppIdSettingsGetAllRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SettingsApiService
-	appId      int32
+	appId int32
 }
 
 func (r ApiGetWebhooksV3AppIdSettingsGetAllRequest) Execute() (*SettingsResponse, *http.Response, error) {
@@ -147,27 +148,26 @@ func (r ApiGetWebhooksV3AppIdSettingsGetAllRequest) Execute() (*SettingsResponse
 /*
 GetWebhooksV3AppIdSettingsGetAll Method for GetWebhooksV3AppIdSettingsGetAll
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param appId
-	@return ApiGetWebhooksV3AppIdSettingsGetAllRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param appId
+ @return ApiGetWebhooksV3AppIdSettingsGetAllRequest
 */
 func (a *SettingsApiService) GetWebhooksV3AppIdSettingsGetAll(ctx context.Context, appId int32) ApiGetWebhooksV3AppIdSettingsGetAllRequest {
 	return ApiGetWebhooksV3AppIdSettingsGetAllRequest{
 		ApiService: a,
-		ctx:        ctx,
-		appId:      appId,
+		ctx: ctx,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return SettingsResponse
+//  @return SettingsResponse
 func (a *SettingsApiService) GetWebhooksV3AppIdSettingsGetAllExecute(r ApiGetWebhooksV3AppIdSettingsGetAllRequest) (*SettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *SettingsResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetWebhooksV3AppIdSettingsGetAll")
@@ -235,14 +235,14 @@ func (a *SettingsApiService) GetWebhooksV3AppIdSettingsGetAllExecute(r ApiGetWeb
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -259,9 +259,9 @@ func (a *SettingsApiService) GetWebhooksV3AppIdSettingsGetAllExecute(r ApiGetWeb
 }
 
 type ApiPutWebhooksV3AppIdSettingsConfigureRequest struct {
-	ctx                   context.Context
-	ApiService            *SettingsApiService
-	appId                 int32
+	ctx context.Context
+	ApiService *SettingsApiService
+	appId int32
 	settingsChangeRequest *SettingsChangeRequest
 }
 
@@ -277,27 +277,26 @@ func (r ApiPutWebhooksV3AppIdSettingsConfigureRequest) Execute() (*SettingsRespo
 /*
 PutWebhooksV3AppIdSettingsConfigure Method for PutWebhooksV3AppIdSettingsConfigure
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param appId
-	@return ApiPutWebhooksV3AppIdSettingsConfigureRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param appId
+ @return ApiPutWebhooksV3AppIdSettingsConfigureRequest
 */
 func (a *SettingsApiService) PutWebhooksV3AppIdSettingsConfigure(ctx context.Context, appId int32) ApiPutWebhooksV3AppIdSettingsConfigureRequest {
 	return ApiPutWebhooksV3AppIdSettingsConfigureRequest{
 		ApiService: a,
-		ctx:        ctx,
-		appId:      appId,
+		ctx: ctx,
+		appId: appId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return SettingsResponse
+//  @return SettingsResponse
 func (a *SettingsApiService) PutWebhooksV3AppIdSettingsConfigureExecute(r ApiPutWebhooksV3AppIdSettingsConfigureRequest) (*SettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *SettingsResponse
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.PutWebhooksV3AppIdSettingsConfigure")
@@ -370,14 +369,14 @@ func (a *SettingsApiService) PutWebhooksV3AppIdSettingsConfigureExecute(r ApiPut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v Error
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

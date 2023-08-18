@@ -21,7 +21,7 @@ var _ MappedNullable = &SettingsResponse{}
 // SettingsResponse Webhook settings for an app.
 type SettingsResponse struct {
 	// A publicly available URL for Hubspot to call where event payloads will be delivered. See [link-so-some-doc](#) for details about the format of these event payloads.
-	TargetUrl  string             `json:"targetUrl"`
+	TargetUrl string `json:"targetUrl"`
 	Throttling ThrottlingSettings `json:"throttling"`
 	// When this subscription was created. Formatted as milliseconds from the [Unix epoch](#).
 	CreatedAt time.Time `json:"createdAt"`
@@ -154,7 +154,7 @@ func (o *SettingsResponse) SetUpdatedAt(v time.Time) {
 }
 
 func (o SettingsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,3 +207,5 @@ func (v *NullableSettingsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

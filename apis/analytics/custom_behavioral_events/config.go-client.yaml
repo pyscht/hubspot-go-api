@@ -1,0 +1,8 @@
+outputAsLibrary: true
+sourceFolder: openapi
+isGoSubmodule: true
+
+
+gitUserId: pyscht
+gitRepoId: hubspot-go-api/apis/analytics
+packageName: custom_behavioral_events

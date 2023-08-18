@@ -1,0 +1,3 @@
+outputAsLibrary: true
+sourceFolder: openapi
+isGoSubmodule: true
